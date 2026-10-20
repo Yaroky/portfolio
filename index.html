@@ -1652,6 +1652,35 @@ h2 {
 .more .arrow {
   transition: transform .2s
 }
+/* пустой кейс «Здесь будешь ты»: место оставлено специально, надпись медленно проявляется */
+.case.empty .shot {
+  background: var(--paper)
+}
+.case.empty .slot {
+  position: absolute;
+  inset: 16px;
+  border: 1.5px dashed #c9cdd8;
+  border-radius: calc(var(--r-xl) - 16px);
+  display: grid;
+  place-items: center
+}
+.case.empty .slot span {
+  font: var(--fw-display) var(--t-h3)/var(--lh-display) var(--display);
+  letter-spacing: var(--ls-display);
+  color: var(--ink-2)
+}
+.anim .case.empty .slot span {
+  opacity: 0;
+  filter: blur(6px);
+  transition: opacity 2.4s ease .8s, filter 2.4s ease .8s
+}
+.anim .case.empty.in .slot span {
+  opacity: 1;
+  filter: none
+}
+:root[data-theme="dark"] .case.empty .slot {
+  border-color: #3a3e4d
+}
 .concepts {
   margin-top: var(--grid);
   display: flex;
@@ -3297,8 +3326,8 @@ try {
         <span class="more">Смотреть кейс <span class="arrow" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
       </div>
     </a>
-    <a class="case wide" href="/carpooling">
-      <div class="shot s4"><picture><source media="(max-width:600px)" srcset="/img/carpooling/cover-m-880.webp 880w, /img/carpooling/cover-m.webp 1760w" sizes="calc(100vw - 32px)" width="1760" height="1320"><img src="/img/carpooling/cover.webp" srcset="/img/carpooling/cover-1200.webp 1200w, /img/carpooling/cover.webp 2400w" sizes="(min-width:1232px) 1136px, calc(100vw - 64px)" alt="Экраны приложения для совместных поездок: пассажир, водитель и поездка в тёмной теме" width="2400" height="1200" loading="lazy" decoding="async">
+    <a class="case" href="/carpooling">
+      <div class="shot s4"><picture><source media="(max-width:600px)" srcset="/img/carpooling/cover-m-880.webp 880w, /img/carpooling/cover-m.webp 1760w" sizes="calc(100vw - 32px)" width="1760" height="1320"><img src="/img/carpooling/cover.webp" srcset="/img/carpooling/cover-1200.webp 1200w, /img/carpooling/cover.webp 2400w" sizes="(min-width:1232px) 556px, (min-width:880px) calc(50vw - 44px), calc(100vw - 64px)" alt="Экраны приложения для совместных поездок: пассажир, водитель и поездка в тёмной теме" width="2400" height="1200" loading="lazy" decoding="async">
         <div class="chips"><span class="chip glass"><b>2 роли</b>водитель и пассажир</span></div>
       </div>
       <div class="case-body">
@@ -3306,6 +3335,15 @@ try {
         <h3>Приложение для совместных поездок</h3>
         <p>Сценарии водителя и пассажира в одном приложении, от поиска поездки до отзыва.</p>
         <span class="more">Смотреть кейс <span class="arrow" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+      </div>
+    </a>
+    <a class="case empty" href="#contact">
+      <div class="shot"><div class="slot"><span>Здесь будешь ты</span></div></div>
+      <div class="case-body">
+        <p class="meta"><span>Твоё дело</span><span>Сайт</span><span>Скоро</span></p>
+        <h3>Это место занято</h3>
+        <p>Я оставил его пустым специально. Просто человек ещё не пришёл.</p>
+        <span class="more">Написать мне <span class="arrow" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
       </div>
     </a>
   </div>
