@@ -3674,7 +3674,7 @@ figcaption::before {
 }
 </style>
 <style>
-/* Плашка cookie: стекло как у меню, внизу слева, на телефоне во всю ширину */
+/* Плашка cookie: стекло как у меню, внизу слева, на телефоне по ширине контента */
 .cookie {
   position: fixed;
   z-index: 20;
@@ -3684,11 +3684,15 @@ figcaption::before {
   display: flex;
   align-items: center;
   gap: 12px;
-  max-width: 340px;
   padding: 8px 8px 8px 16px;
   border-radius: var(--r-m);
   color: var(--ink);
+  /* тень мягче, чем у .glass: плашка не должна темнить низ экрана */
+  box-shadow: inset 0 1px 0 var(--glass-edge), inset 0 0 0 1px rgba(255, 255, 255, .35), 0 6px 20px -12px rgba(12, 15, 22, .12);
   transition: opacity .3s ease-out, translate .3s ease-out
+}
+:root[data-theme="dark"] .cookie {
+  box-shadow: inset 0 1px 0 var(--glass-edge), inset 0 0 0 1px rgba(255, 255, 255, .06), 0 6px 20px -12px rgba(0, 0, 0, .5)
 }
 .cookie[hidden] {
   display: none
@@ -3714,6 +3718,7 @@ figcaption::before {
 }
 @media (min-width:720px) {
   .cookie {
+    max-width: 340px;
     left: 24px;
     right: auto;
     bottom: calc(env(safe-area-inset-bottom, 0px) + 24px)
