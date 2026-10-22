@@ -3683,9 +3683,9 @@ figcaption::before {
   bottom: calc(env(safe-area-inset-bottom, 0px) + 16px);
   display: flex;
   align-items: center;
-  gap: 16px;
-  max-width: 480px;
-  padding: 10px 10px 10px 20px;
+  gap: 12px;
+  max-width: 340px;
+  padding: 8px 8px 8px 16px;
   border-radius: var(--r-m);
   color: var(--ink);
   transition: opacity .3s ease-out, translate .3s ease-out
@@ -3709,8 +3709,8 @@ figcaption::before {
 }
 .cookie .btn {
   flex: none;
-  min-height: 40px;
-  padding: 0 18px
+  min-height: 36px;
+  padding: 0 16px
 }
 @media (min-width:720px) {
   .cookie {
@@ -4336,8 +4336,8 @@ try {
 })();
 </script>
 <div class="cookie glass cookie-off" id="cookie" role="region" aria-label="Cookie" hidden>
-  <p>Сайт использует cookie и&nbsp;Яндекс Метрику. <a href="/privacy#purpose">Подробнее</a></p>
-  <button class="btn btn-ink" type="button" id="cookie-ok">Понятно</button>
+  <p>Сайт использует cookie и&nbsp;Яндекс&nbsp;Метрику. <a href="/privacy#purpose">Подробнее</a></p>
+  <button class="btn btn-line" type="button" id="cookie-ok">Понятно</button>
 </div>
 <script>
 (function() {
