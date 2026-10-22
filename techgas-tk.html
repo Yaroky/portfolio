@@ -3673,6 +3673,58 @@ figcaption::before {
   }
 }
 </style>
+<style>
+/* Плашка cookie: стекло как у меню, внизу слева, на телефоне во всю ширину */
+.cookie {
+  position: fixed;
+  z-index: 20;
+  left: max(16px, env(safe-area-inset-left, 0px));
+  right: max(16px, env(safe-area-inset-right, 0px));
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 16px);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 480px;
+  padding: 10px 10px 10px 20px;
+  border-radius: var(--r-m);
+  color: var(--ink);
+  transition: opacity .3s ease-out, translate .3s ease-out
+}
+.cookie[hidden] {
+  display: none
+}
+.cookie.cookie-off {
+  opacity: 0;
+  translate: 0 12px
+}
+.cookie p {
+  margin: 0;
+  font: var(--fw-body) var(--t-xs)/var(--lh-body) var(--body);
+  color: var(--ink-2)
+}
+.cookie a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px
+}
+.cookie .btn {
+  flex: none;
+  min-height: 40px;
+  padding: 0 18px
+}
+@media (min-width:720px) {
+  .cookie {
+    left: 24px;
+    right: auto;
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 24px)
+  }
+}
+@media (prefers-reduced-motion:reduce) {
+  .cookie {
+    transition: none
+  }
+}
+</style>
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){
@@ -4342,6 +4394,31 @@ try {
   addEventListener('resize', function() {
     target = Math.min(target, max())
   });
+})();
+</script>
+<div class="cookie glass cookie-off" id="cookie" role="region" aria-label="Cookie" hidden>
+  <p>Сайт использует cookie и&nbsp;Яндекс Метрику. <a href="/privacy#purpose">Подробнее</a></p>
+  <button class="btn btn-ink" type="button" id="cookie-ok">Понятно</button>
+</div>
+<script>
+(function() {
+  var box = document.getElementById('cookie');
+  try {
+    if (localStorage.getItem('ya-cookie')) return
+  } catch (e) {}
+  box.hidden = false;
+  setTimeout(function() {
+    box.classList.remove('cookie-off')
+  }, 800);
+  document.getElementById('cookie-ok').addEventListener('click', function() {
+    try {
+      localStorage.setItem('ya-cookie', '1')
+    } catch (e) {}
+    box.classList.add('cookie-off');
+    setTimeout(function() {
+      box.hidden = true
+    }, 300)
+  })
 })();
 </script>
 </body>
