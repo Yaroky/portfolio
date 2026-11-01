@@ -382,7 +382,7 @@ dd {
   height: 8px;
   border-radius: 50%;
   background: var(--ok);
-  box-shadow: 0 0 0 4px rgba(17, 132, 91, .15)
+  box-shadow: none
 }
 .hero-copy {
   display: grid;
@@ -1493,6 +1493,12 @@ h2 {
   flex-wrap: wrap;
   gap: 8px
 }
+.chip.glass,
+.cookie.glass {
+  background: var(--surface);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none
+}
 .chip {
   border-radius: 14px;
   padding: 10px 14px;
@@ -1669,8 +1675,8 @@ h2 {
   padding: var(--pad-l);
   display: grid;
   gap: clamp(16px, 2vw, 24px);
-  background: linear-gradient(135deg, #efe9ff, #f7f3ff 60%, #fdf1f8);
-  border: 1.5px dashed rgba(107, 60, 240, .45)
+  background: var(--surface);
+  border: 0
 }
 @media (min-width:980px) {
   .ai {
@@ -1730,11 +1736,11 @@ h2 {
   padding: var(--pad-s)
 }
 .ai-fast {
-  background: rgba(255, 255, 255, .55);
-  box-shadow: inset 0 0 0 1px rgba(107, 60, 240, .15)
+  background: var(--paper);
+  box-shadow: none
 }
 .ai-me {
-  background: #fff;
+  background: var(--paper);
   box-shadow: none
 }
 .ai-label {
