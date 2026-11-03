@@ -1781,57 +1781,33 @@ h2 {
   }
 }
 .vibe {
-  margin-top: var(--grid);
-  padding: 0 clamp(0px, 3vw, var(--pad-l))
-}
-.vibe-list {
-  display: grid;
-  gap: 12px
-}
-@media (min-width:640px) {
-  .vibe-list {
-    grid-template-columns: 1fr 1fr
-  }
-}
-.vibe-item {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
-  gap: 14px;
-  padding: 10px;
-  border-radius: var(--r-m);
+  gap: 16px;
   background: var(--surface);
-  text-decoration: none;
-  color: inherit
+  border-radius: var(--r-l);
+  padding: var(--pad);
+  box-shadow: var(--shadow)
 }
-.vibe-item img {
-  flex: none;
-  width: 96px;
-  height: 60px;
-  object-fit: cover;
-  object-position: left top;
-  border-radius: 10px
-}
-.vibe-item span {
+.vibe-t {
   display: grid;
-  gap: 2px;
-  min-width: 0
+  gap: 4px;
+  max-width: 560px
 }
-.vibe-item b {
-  font-size: var(--t-s);
-  font-weight: var(--fw-strong)
+.vibe-t h2 {
+  font-size: var(--t-h4);
+  font-weight: var(--fw-display)
 }
-.vibe-item small {
-  font-size: var(--t-xs);
-  color: var(--ink-2)
+.vibe-t p {
+  color: var(--ink-2);
+  font-size: var(--t-s)
 }
-.vibe-item .arrow {
-  display: inline-block;
-  transition: transform .2s
-}
-@media (hover:hover) {
-  .vibe-item:hover .arrow {
-    transform: translate(2px, -2px)
-  }
+.vibe-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px
 }
 .ai-head {
   display: grid;
@@ -3488,17 +3464,18 @@ try {
       </div>
     </div>
   </div>
+</section>
+
+<!-- ══════════ Пет-проекты ══════════ -->
+<section class="wrap" id="vibe" aria-labelledby="vibe-h">
   <div class="vibe">
-    <p class="ai-label">Пет-проекты, собранные вайбкодингом</p>
-    <div class="vibe-list">
-      <a class="vibe-item" href="https://poprobuy-otpishis.layero.app/" target="_blank" rel="noopener">
-        <img src="/img/vibe/poprobuy-otpishis-800.webp" alt="" width="800" height="500" loading="lazy" decoding="async">
-        <span><b>Попробуй отпишись <span class="arrow" aria-hidden="true">↗</span></b><small>Музей худших приёмов отписки: чек считает каждую уловку</small></span>
-      </a>
-      <a class="vibe-item" href="https://romashkovaya-viktorina.layero.app/" target="_blank" rel="noopener">
-        <img src="/img/vibe/romashkovaya-viktorina-800.webp" alt="" width="800" height="500" loading="lazy" decoding="async">
-        <span><b>Угадай серию Смешариков <span class="arrow" aria-hidden="true">↗</span></b><small>Викторина: с каждой ошибкой фрагмент серии длиннее</small></span>
-      </a>
+    <div class="vibe-t">
+      <h2 id="vibe-h">Пет-проекты на вайбкодинге</h2>
+      <p>Придумываю, рисую и собираю сам вместе с AI, от идеи до работающего сайта.</p>
+    </div>
+    <div class="vibe-links">
+      <a class="btn btn-line" href="https://poprobuy-otpishis.layero.app/" target="_blank" rel="noopener">Попробуй отпишись ↗</a>
+      <a class="btn btn-line" href="https://romashkovaya-viktorina.layero.app/" target="_blank" rel="noopener">Угадай серию Смешариков ↗</a>
     </div>
   </div>
 </section>
