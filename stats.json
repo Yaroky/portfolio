@@ -1,20 +1,20 @@
 {
   "telegram": {
-    "followers": 96
+    "followers": 95
   },
   "youtube": {
-    "followers": 108,
+    "followers": 109,
     "v6yxLOy_-Cs": 2400,
     "zNzwDKlmW8c": 2000,
     "Yr-RgcI3F-4": 695
   },
   "tiktok": {
-    "followers": 12900,
-    "likes": 514000,
-    "videos": 91,
+    "followers": 13000,
+    "likes": 516400,
+    "videos": 93,
     "7698254210139294990": 1600000,
-    "7698613052366687501": 174800,
-    "7698602476861263118": 512500
+    "7698613052366687501": 176000,
+    "7698602476861263118": 513800
   },
   "twitch": {
     "followers": 12
@@ -23,5 +23,5 @@
     "followers": 2646,
     "posts": 85
   },
-  "updated": "2026-11-23"
+  "updated": "2026-11-24"
 }
